@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/credentials', [CredentialsController::class,'index']);
+
+Route::get('/leads', [CredentialsController::class,'index']);
