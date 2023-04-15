@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use AmoCRM\Client\AmoCRMApiClient;
+use Illuminate\Support\Facades\Storage;
 
 class CredentialsController extends Controller
 {
@@ -21,7 +22,7 @@ class CredentialsController extends Controller
         
         $token = $apiClient->getOAuthClient()->getAccessTokenByCode($_GET['code']);
         
-        file_put_contents('token.json', json_encode($token->jsonSerialize(), JSON_PRETTY_PRINT));
+        Storage::disk('local')->put('token.json', json_encode($token->jsonSerialize(), JSON_PRETTY_PRINT));
         
         echo 'OK';
     }
