@@ -23,7 +23,5 @@ class CredentialsController extends Controller
         $token = $apiClient->getOAuthClient()->getAccessTokenByCode($_GET['code']);
         
         Storage::disk('local')->put('token.json', json_encode($token->jsonSerialize(), JSON_PRETTY_PRINT));
-        
-        echo 'OK';
     }
 }
