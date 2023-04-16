@@ -1,66 +1,19 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Установка:
+1) Создать .env
+2) composer install
+3) php artisan sail:install (затем выбрать psql)
+4) ./vendor/bin/sail up
+5) ./vendor/bin/sail artisan migrate
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Для работы с API amocrm нужно установить в интеграции в поле "ссылка для перенапрвления" путь на /credentials для создания token.json
 
-## About Laravel
+Либо, в качестве примера, можно лично создать файл token.json в storage/app
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Пример token.json который можно использовать:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+{
+    "token_type": "Bearer",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjliNDMyYjVkZGM1OWZiY2E3NTI1M2UzYjZkYWFhZDVlZWYyOTk4ODMyZGExNDJmNmZmNDUwYzZlMzFjMmEyMzVkMWI1ZjIzYzM0OTQwYjk0In0.eyJhdWQiOiI1NWNhZDMzZi1mNTc4LTQxMGItOTA4Ni04NmZmZGRkMzcwMTMiLCJqdGkiOiI5YjQzMmI1ZGRjNTlmYmNhNzUyNTNlM2I2ZGFhYWQ1ZWVmMjk5ODgzMmRhMTQyZjZmZjQ1MGM2ZTMxYzJhMjM1ZDFiNWYyM2MzNDk0MGI5NCIsImlhdCI6MTY4MTY3NzcxMywibmJmIjoxNjgxNjc3NzEzLCJleHAiOjE2ODE3NjQxMTMsInN1YiI6Ijk1MDA3MzQiLCJhY2NvdW50X2lkIjozMTAwMzg5MCwiYmFzZV9kb21haW4iOiJhbW9jcm0ucnUiLCJzY29wZXMiOlsicHVzaF9ub3RpZmljYXRpb25zIiwiZmlsZXMiLCJjcm0iLCJmaWxlc19kZWxldGUiLCJub3RpZmljYXRpb25zIl19.dpKwGzdv0L3Y4P_Z_ZM5SHjn9B_OYUJnGUFKSyHPHCMw1dtDEzfW1-SRi06sKruZJUiY5wD0ohIpCpS64eEEQ2pMIMAHAq7LVZOwr0b7B3hJ3m6UQ4ciojZ0EAMfcUmL1IM94InH65jZhP8UbIUAlkFLaJiQNcptmhd1io67_dFHX6OzFN7V5CDKhk-oNwGLuFC7ke2nE2pZfYLdWxnIjxF1jEH047Ub1aElfos7TpHMSiSNkJh_ED_Na1PfZ5SCuauU3-0g4tew5YiZincqTp2BzAdsyk_KeDI5FkSEjmSA_JaHW9NRFtLpC_vcSkZjenosp-DNvm4zmIBHuiDkWQ",
+    "refresh_token": "def50200dd9cadebbf1b640ec7f1da7ecb11240e9344caab38817fc8c83e8461b6979dcb68da4cb2f952bbdc13f2c0e50e67d422e7617a899da7d5b04dd134dd6bfcd93fee553a93c5fb4bef96cc1dca985279ce90b5822c651107eb581739e383eae6557dcf8cfade46a0dfc0fb75e5537ff6c6de107c9036aac3115163c6b43b907b5e403ce85e9b3d022253dc12caccb861eaac545252adaab2939675633c9b64608ddc6707b9f6affa4bf50aec70df72d786fa4416c9763fe6d55e0f8a203dd06ca10cab6d10f92fd3c3985875314a3ae4f449dfc94f74282f62874d609ae46b23ca7a4339d5fdebab2b38383577ac1a1540e2e7b0afe853577478b2b84c0c3073507f0427b270b4cd64201cb38311e5e13c5a95f6fa1e32b9dbc8d2dff0d4e5a5ea688e3ef25cb983200730ae6541e2ccfd87d8ae8ceee00255ff9cfd5aed8ea0ca3492b4321d007cef3b3a118b5b13b5643b8253a47cd4d03e82848e7f24c194c51f94d9c928eb5fb7c2d6f6dde25ceacaf2aa3c12fc0191bdf7b969e4f11229d7cfc32876f13f914fc9b5f2113f60ec0144d988f534d5a200114f616e6ecfcbc222b4ee59579c39d4926d9fc50fdb0f9bd295d8be5403ea58c5b65252c15adc55651a2e587c3f878c486efa959250bbbf06ac5e0cf00b1c7727cd93ab3a",
+    "expires": 1681764113
+}
